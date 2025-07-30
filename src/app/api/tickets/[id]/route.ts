@@ -42,7 +42,7 @@ export async function PATCH(
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string | any } }
+  { params }: { params: { id: string } }
 ) {
   try {
     const ticket = await prisma.ticket.findUnique({
