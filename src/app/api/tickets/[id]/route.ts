@@ -47,15 +47,23 @@ export async function GET(
   try {
     const ticket = await prisma.ticket.findUnique({
       where: { id: params.id },
-    })
+    });
 
     if (!ticket) {
       return NextResponse.json(
         { success: false, message: 'Ticket not found' },
         { status: 404 }
-      )
+      );
     }
 
+    return NextResponse.json({ success: true, ticket }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      { success: false, message: 'Something went wrong', error },
+      { status: 500 }
+    );
+  }
+}
     return NextResponse.json({ ticket })
   } catch (error) {
     console.error('Error fetching ticket:', error)
