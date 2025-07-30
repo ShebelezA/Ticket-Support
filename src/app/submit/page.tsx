@@ -86,7 +86,7 @@ export default function SubmitTicketPage() {
               Submit Support Ticket
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Tell us about your issue and we'll get back to you as soon as possible
+              Tell us about your issue and we will get back to you as soon as possible
             </p>
           </div>
 
